@@ -11,4 +11,5 @@ urlpatterns = [
     url(r'^refer/$', views.refer, name='refer'),
     url(r'^schedule/$', views.schedule, name='schedule'),
     url(r'^volunteer/$', views.volunteer, name='volunteer'), 
+    url(r'^BookNow/$', views.BookNow, name='BookNow'), 
 ]

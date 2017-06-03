@@ -24,3 +24,7 @@ def schedule(request):
 def volunteer(request):
 	context = {}
 	return render(request, 'app/volunteer.html', context)
+
+def BookNow(request):
+	context = {}
+	return render(request, 'app/BookNow.html', context)
