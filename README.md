@@ -16,9 +16,9 @@ An online platform that offers help to people going into new countries by connec
 * Install pip
 * Install Django as pip install Django
 * Clone this repo
-* Run python manage.py makemigrations QuickBooking
+* Run python manage.py makemigrations app
 * Run python manage.py migrate
 * Run python manage.py runserver to launch the dev HTTP server
 * Go to the admin page to add/remove/edit entires in db.
 
-##Have fun!
+##Feel free to contribute to the project . 

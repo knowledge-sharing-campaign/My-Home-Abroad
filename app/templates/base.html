@@ -1,0 +1,20 @@
+{% load staticfiles %}
+
+<html>
+<head>
+<title>{% block title %}{% endblock %}</title>
+<ul>
+  <li><a href="{%url 'app:schedule'%}"> My Scheduled Visit </a></li>
+  <li><a href="{%url 'app:volunteer'%}"> Volunteer </a></li>
+  <li><a href="{%url 'app:policies'%}"> Policies </a></li>
+  <li><a href="{%url 'app:refer'%}"> Refer a Friend </a></li>
+  <li><a href="{%url 'app:login'%}"> Login </a></li>
+  <li><a href="{%url 'app:logout'%}"> Logout </a></li>
+</ul>
+</head>
+
+<body bgcolor="lightblue">
+  {% block content %}
+
+  {% endblock %}
+</body>
