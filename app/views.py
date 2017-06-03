@@ -23,12 +23,8 @@ def schedule(request):
 	return render(request, 'schedule.html', context)
 def volunteer(request):
 	context = {}
-<<<<<<< HEAD
-	return render(request, 'app/volunteer.html', context)
+	return render(request, 'volunteer.html', context)
 
 def BookNow(request):
 	context = {}
-	return render(request, 'app/BookNow.html', context)
-=======
-	return render(request, 'volunteer.html', context)
->>>>>>> 7b2df28df5ca7299bfecdfbe8a8db2903c6cba39
+	return render(request, 'BookNow.html', context)
