@@ -2,20 +2,38 @@
 
 <html>
 <head>
-<title>{% block title %}{% endblock %}</title>
-<ul>
-  <li><a href="{%url 'app:schedule'%}"> My Scheduled Visit </a></li>
-  <li><a href="{%url 'app:volunteer'%}"> Volunteer </a></li>
-  <li><a href="{%url 'app:policies'%}"> Policies </a></li>
-  <li><a href="{%url 'app:refer'%}"> Refer a Friend </a></li>
-  <li><a href="{%url 'app:login'%}"> Login </a></li>
-  <li><a href="{%url 'app:logout'%}"> Logout </a></li>
-  
-</ul>
+    <title>{% block title %}{% endblock %}</title>
+    <!-- <link rel="stylesheet" type="" href="{% static "css/style.css" %}"> -->
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{% static "css/bootstrap.min.css" %}">
+  <link rel="stylesheet" href="{% static "css/bootstrap.css" %}">
+  <link rel="stylesheet" href="{% static "css/mystyle.css" %}">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 
-<body bgcolor="lightblue">
-  {% block content %}
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a href="{% url 'app:index' %}" class="navbar-brand"><img class="log" src="{% static "img/logo.png" %}"></a>
+    </div>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="{%url 'app:schedule'%}"> My Scheduled Visit </a></li>
+			<li><a href="{%url 'app:volunteer'%}"> Volunteer </a></li>
+			<li><a href="{%url 'app:policies'%}"> Policies </a></li>
+			<li><a href="{%url 'app:refer'%}"> Refer a Friend </a></li>
+			<li><a href="{%url 'app:login'%}"> Login </a></li>
+			<li><a href="{%url 'app:logout'%}"> Logout </a></li> 
+    </ul>
+  </div>
+</nav>
 
-  {% endblock %}
+
+{% block content %}
+<body >
+
 </body>
+
+
+{% endblock %}
