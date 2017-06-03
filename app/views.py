@@ -28,3 +28,14 @@ def volunteer(request):
 def BookNow(request):
 	context = {}
 	return render(request, 'BookNow.html', context)
+def register(request):
+	context = {}
+	return render(request, 'register.html', context)
+
+# def test(request):
+#       if request.method == 'POST':
+#           form = CreateAccountForm(request.POST)
+#           if form.is_valid():
+#               return HttpResponse('OK')
+#       else:
+#             return HttpResponse(json.dumps(form.errors))

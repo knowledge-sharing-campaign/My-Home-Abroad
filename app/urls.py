@@ -12,4 +12,6 @@ urlpatterns = [
     url(r'^schedule/$', views.schedule, name='schedule'),
     url(r'^volunteer/$', views.volunteer, name='volunteer'), 
     url(r'^BookNow/$', views.BookNow, name='BookNow'), 
+    url(r'^register/$', views.register, name='register')
+    # url(r'^test/', 'testingform.views.test', name='test')
 ]
