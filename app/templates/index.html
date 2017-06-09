@@ -1,8 +1,48 @@
-{% extends 'base.html' %}
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{% static "css/bootstrap.min.css" %}">
+  <link rel="stylesheet" href="{% static "css/bootstrap.css" %}">
+   <link rel="stylesheet" href="{% static "css/mystyle.css" %}">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a href="{% url 'app:index' %}" class="navbar-brand" href="#"><img class="log" src="{% static "img/logo.png" %}"></a>
+    </div>
+    <ul class="nav navbar-nav navbar-right" id="juma">
+ 
+      <li class="active"><a href="{% url 'app:index' %}">Home</a></li>
+      <li><a href="{%url 'app:schedule'%}">My Scheduled Visit</a></li>
+      <li><a href="{%url 'app:volunteer'%}">Volunteer</a></li>
+      <li><a href="{%url 'app:refer'%}">Refer a Friend</a></li>
+      <li><a href="{%url 'app:policies'%}">Policies</a></li>
+      <li><a href="{%url 'app:login'%}">Login</a></li>
+    </ul>
+  </div>
+</nav>
+    <h5>ONE PLANET ONE HOME</h5>
 
 
-{% block content %}  
-<div class="container"> 
+
+
+
+<div class="container-fluid">  
+
+<div class="col-md-12 hover-slide text-center id=bala">
+  <a href="#page-intro" class="btn btn-warning start-me">BOOK NOW!</a>  
+</div>
+
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">
@@ -10,19 +50,19 @@
       <li data-target="#myCarousel" data-slide-to="1"></li>
       <li data-target="#myCarousel" data-slide-to="2"></li>
     </ol>
-
+  
     <!-- Wrapper for slides -->
     <div class="carousel-inner">
       <div class="item active">
-        <img src="img/ban.jpg" alt="Los Angeles" style="width:100%;">
+        <img class="log" src="{% static "img/asia.jpg" %}" alt="Los Angeles" style="width:100%;">
       </div>
 
       <div class="item">
-        <img src="img/bann.jpg" alt="Chicago" style="width:100%;">
+        <img class="log" src="{% static "img/africa.jpg" %}" alt="Chicago" style="width:100%;">
       </div>
     
       <div class="item">
-        <img src="img/banne.jpg" alt="New york" style="width:100%;">
+        <img class="log" src="{% static "img/europe.jpg" %}" alt="New york" style="width:100%;">
       </div>
     </div>
 
@@ -36,12 +76,28 @@
       <span class="sr-only">Next</span>
     </a>
   </div>
-</div>
 
-<div class="booking">
 
-    <a href="{%url 'app:BookNow'%}">
-    <center><input type="button"; value="Book Now" type="button" /> </a></center>
-</div>
 
-{% endblock %}
+
+  <div class="navbar navbar-default" id="faro">
+    <div class="container">
+      <p class="link-a navbar-text pull-left">my home Abroad
+          <a class="fa fa-twitter" href="https://twitter.com/Twitter?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" target="_blank" ></a>
+          <a class="fa fa-facebook" href="https://facebook.com/" target="_blank"></a>
+          <a class="fa fa-envelope-o" href="https://gmail.com" target="_blank" ></a>
+          <a class="fa fa-whatsapp" href="https://whatsapp.com/Twitter?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" target="_blank" ></a>
+         
+      </p>
+  <ul class="nav navbar-nav navbar-right" id="kawa">
+      <li><a href="#">contact us</a></li>
+      <li><a href="#">About us</a></li>
+   
+    </ul>
+      <a href="http://youtu.be/zJahlKPCL9g" class="navbar-btn btn-danger btn pull-right">
+      <span class="glyphicon glyphicon-star"></span>  Subscribe on YouTube</a>
+    </div>
+
+ </div>
+</body>
+</html

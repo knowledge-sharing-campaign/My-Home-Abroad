@@ -1,4 +1,35 @@
 .log{
 	width:116px;
 	margin-top: -42px;
+
+}
+.navbar{
+background-color: #F28500;	
+}
+#juma  li a{
+	color: black;
+}
+#juma  li a:hover{
+	color: white;
+}
+.btn.start-me{
+margin-top:400px;font-weight: bolder;
+font-size: 20px;
+margin-left: -80px;
+}
+.hover-slide{
+	position:absolute;
+z-index:10;
+}
+#faro{
+	background-color: FFFFBF;
+}
+#kawa  li a{
+	color: black;
+}
+#kawa  li a:hover{
+	color: blue;
+}
+#bala{
+	color: #F28500
 }
