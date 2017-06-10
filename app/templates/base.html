@@ -1,52 +1,98 @@
 {% load staticfiles %}
 
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <title>Bootstrap Example</title>
+  <title>Home | Page</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="{% static "css/bootstrap.min.css" %}">
   <link rel="stylesheet" href="{% static "css/bootstrap.css" %}">
-   <link rel="stylesheet" href="{% static "css/mystyle.css" %}">
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{% static "css/mystyle.css" %}">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body>
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
 
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
+<div class="container-fluid top-head">
+  <ul class="text-right top-link">
+    <li><a style="color:#f28500;" href="#">e-mail@mail.com</a></li>
+    <li><a class="fa fa-facebook fa-lg" href="https://en-gb.facebook.com/"></a></li>
+    <li><a class="fa fa-twitter fa-lg" href="https://twitter.com/"></a></li>
+    <li><a class="fa fa-google-plus fa-lg" href="https://plus.google.com/collections/featured"></a></li>
+    <li><a class="fa fa-linkedin fa-lg" href="https://www.linkedin.com/"></a></li>
+  </ul>
+</div>
+
+<nav class="navbar fix " data-spy="affix" data-offset-top="197">
+  <div class="container">
     <div class="navbar-header">
-      <a href="{% url 'app:index' %}" class="navbar-brand" href="#"><img class="log" src="{%static "img/logo.png" %}"></a>
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span style="background:red;"class="icon-bar"></span>
+          <span style="background:red;"class="icon-bar"></span>
+          <span style="background:red;"class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html"> <img class="logo" src="{% static "img/logo.png" %}" alt=""></a>
     </div>
-    <ul class="nav navbar-nav navbar-right" id="juma">
- 
-      <li class="active"><a href="{% url 'app:index' %}">Home</a></li>
-      <li><a href="{%url 'app:schedule'%}">My Scheduled Visit</a></li>
-      <li><a href="{%url 'app:volunteer'%}">Volunteer</a></li>
-      <li><a href="{%url 'app:refer'%}">Refer a Friend</a></li>
-      <li><a href="{%url 'app:policies'%}">Policies</a></li>
-      <li><a href="{%url 'app:login'%}">Login</a></li>
-    </ul>
+    <div>
+      <div class="collapse navbar-collapse navbar-right  a-color" id="myNavbar">
+        <ul class="nav navbar-nav">
+          <li><a href="{% url 'app:index' %}">Home</a></li>
+          <li><a href="{%url 'app:schedule'%}">My Scheduled Visits</a></li>
+          <li><a href="{%url 'app:volunteer'%}">volunteer</a></li>
+          <li><a href="{%url 'app:refer'%}">Refer a friend </a></li>
+          <li><a href="{%url 'app:policies'%}">Policies</a></li>
+          <li><a href="{%url 'app:login'%}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        </ul>
+      </div>
+    </div>
   </div>
 </nav>
     <h5>ONE PLANET ONE HOME</h5>
 
-  <div class="navbar navbar-default navbar-fixed-bottom" id="faro">
-    <div class="container">
-      <p class="link-a navbar-text pull-left">my home Abroad
-          <a class="fa fa-twitter" href="https://twitter.com/Twitter?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" target="_blank" ></a>
-          <a class="fa fa-facebook" href="https://facebook.com/" target="_blank"></a>
-          <a class="fa fa-envelope-o" href="https://gmail.com" target="_blank" ></a>
-          <a class="fa fa-whatsapp" href="https://whatsapp.com/Twitter?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" target="_blank" ></a>
-         
-      </p>
-  <ul class="nav navbar-nav navbar-right" id="kawa">
-      <li><a href="#">contact us</a></li>
-      <li><a href="#">About us</a></li>
-   
-    </ul>
-      <a href="http://youtu.be/zJahlKPCL9g" class="navbar-btn btn-danger btn pull-right">
-      <span class="glyphicon glyphicon-star"></span>  Subscribe on YouTube</a>
+
+
+  <footer id="bottom">
+  <div class="container margin-btm">
+    <div class="row">
+      <div class="col-md-4 ">
+        <h1>Web<i class="red">S</i>ite Name </h1>
+        <h4 class="footer-text-color">we will help anyone out</h4>
+        <p class="footer-text-color">Founded by Steven Pfeiffer, Lesley Dingle and Gerald Harrison back in 1989, today their Houston-based law firm is currently the #1 in both yearly cases dealt with and the percentage of all those cases being won.</p>
+      </div>
+      <div class="col-md-4 text-center">
+        <h5 class="margin-btm">Navigation</h5>
+        <ul id="nav-list">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Home</a></li>
+        </ul>
+    
+      </div>
+      <div class="col-md-4">
+        <h5 class="margin-btm">Contact information</h5>
+        <span class="email"><a href="#">email@gmail.com</a></span>
+        <ul id="social-link" class="margin-btm">
+          <li><a class="fa fa-facebook fa-2x" href="https://en-gb.facebook.com/"></a></li>
+          <li><a class="fa fa-twitter fa-2x" href="https://twitter.com/"></a></li>
+          <li><a class="fa fa-google-plus fa-2x" href="https://plus.google.com/collections/featured"></a></li>
+          <li><a class="fa fa-linkedin fa-2x" href="https://www.linkedin.com/"></a></li>
+        </ul> <br>
+        <h4><a href="#top">Go To Top</a></h4>
+      </div>
     </div>
+  </div> <hr>
+  <div class="container-fluid text-center">
+    <p> © Name. All Rights Reserved</p>
+  </div>
+</footer>
+</body>
+<script type="text/javascript">
+$("#Top").click(function(){
+ scroll(0,0);
+});
+</script>
+</html>

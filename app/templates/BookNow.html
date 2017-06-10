@@ -3,4 +3,15 @@
 {% block content%}
 
 Booking Page
+
+<form action="{% url 'app:BookNow' %}" method="post"> {% csrf_token %}
+
+<p><label for="date">Date:</label><input type="text" name="date" value={% now "Y-m-d" %} /></p>
+
+<p><label for="cost">Cost:</label><input type="text" name="cost" value="0" id="cost" /></p>
+
+<input type="submit" name="submit" />
+
+</form>
+
 {% endblock %}

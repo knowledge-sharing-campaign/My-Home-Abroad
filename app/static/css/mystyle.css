@@ -1,35 +1,275 @@
-.log{
-	width:116px;
-	margin-top: -42px;
+body {
+    position: relative;
+    font-family: "Droid Serif", Georgia, "Times New Roman", Times, serif;
+}
+
+/* Top HEad Section Style */
+.top-head{
+  height: 50px;
+  background-color:#202f39;
+}
+.top-link{
+  float: right;
+  margin-right: 3%;
+}
+.top-link li{
+  float: left;
+  padding-left: 30px;
+  padding-top: 10px;
+}
+.top-link li a{
+  color: #fff;
+  display: block;
+}
+.top-link li a:hover{
+  color: #f28500;
+  text-decoration: none;
+}
+
+/* NavBAr Style And Fixed Header */
+.affix {
+  top:0;
+  width: 100%;
+  z-index: 9999 !important;
+}
+.navbar {
+  margin-bottom: 0px;
+  border-radius: 0;
+}
+.fix{
+  background: #f28500;
+  height: 80px;
+  opacity: .9;
+  border-bottom: 2px solid red;
+  -webkit-box-shadow: 0px 10px 23px 1px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 10px 23px 1px rgba(0,0,0,0.75);
+  box-shadow: 0px 10px 23px 1px rgba(0,0,0,0.75);
+}
+.affix ~ .container-fluid {
+   position: relative;
+   top: 50px;
+}
+.a-color li{
+  padding-top: 14px;
+}
+.a-color li a{
+  text-align: center;
+  color: #202f39;
+  font-weight: 400;
+  font-size: 18px;
+  display: inline-block;
+  font-family:;
+  transition: 0.3s ease-out all;
+}
+.a-color li a:hover{
+  color: #e92c0c;
+  border-top: 3px solid red;
+  transition: 0.3s ease-out all;
+}
+.margin-top{
+  margin-top: -20px;
+}
+.logo{
+  width: 195px;
+  position: absolute;
+  top: -44px;
+}
+/* Booking Section Style  */
+.booking-section{
+  position: absolute;
+  top: 20%;
+  left: 10%;
+  width: 80%;
+  color: #fff;
+  text-align: center;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, .6);
+}
+/* Booking heading Style */
+.booking-section h1{
+  line-height: 1.16;
+  font-size: 60px;
+  color: #fff;
+}
+
+/*Booing Text */
+.booking-section .text{
+  margin-bottom: 30px;
+  font-size: 23px;
+}
+/* Booking Button */
+.booking-btn [type=submit]{
+  width: 200px;
+  height: 50px;
+  color: #fff;
+  font-size: 23px;
+  background: #f28500;
+  -webkit-box-shadow: 0px 3px 19px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 3px 19px 0px rgba(0,0,0,0.75);
+  box-shadow: 0px 3px 19px 0px rgba(0,0,0,0.75);
+}
+.booking-btn [type=submit]:hover{
+  color: #f4f4f4;
+  -webkit-box-shadow: 0px 3px 32px 3px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 3px 32px 3px rgba(0,0,0,0.75);
+  box-shadow: 0px 3px 32px 3px rgba(0,0,0,0.75);
+}
+/* Image Size for Slider*/
+.item-class{
+  min-height: 500px;
+  width: 100%;
+}
+/* top Content Style */
+#top-content{
+  padding-top: 70px;
+  background: #ffffbf;
+  min-height: 250px;
+  color: #fff;
+  overflow: hidden;
+  margin-bottom: 60px;
+}
+.heading-h1{
+  color: #000;
+  text-align: center;
+  font-size: 50px;
+  font-weight: 700;
+}
+#top-content h2{
+  color: #000;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+#top-content p{
+  color: #000;
+  letter-spacing: 1;
+}
+#top-content .div-3{
+  padding: 20px;
+  border: 1px solid #ebebeb;
+  width: 22%;
+  margin-left: 2%;
+  color: #939393;
+}
+#top-content .div-3:hover{
+  -webkit-box-shadow: 6px 8px 24px 0 rgba(32, 47, 57, 0.2);
+  box-shadow: 6px 8px 24px 0 rgba(32, 47, 57, 0.2);
+  -webkit-transform: translateY(-10px);
+  transform: translateY(-10px);
+  border: 1px solid #ebebeb;
+  -webkit-transition: 0.3s ease-out all;
+  -o-transition: 0.3s ease-out all;
+  transition: 0.3s ease-out all;
+}
+
+/* Mid Content Style */
+#mid-content{
+  min-height: 520px;
+}
+#mid-content .mid-div-3{
+  width: 30.5%;
+  margin-left: 2.5%;
+  border-bottom: 2px solid red;
+}
+#mid-content img{
+  max-width: 100%;
+  display: inline-block;
+  height: auto;
+  -webkit-transition: 0.3s ease-out all;
+  -o-transition: 0.3s ease-out all;
+  transition: 0.3s ease-out all;
+}
+#mid-content img:hover{
+  -webkit-box-shadow: 6px 8px 24px 0 rgba(32, 47, 57, 0.2);
+  box-shadow: 6px 8px 24px 0 rgba(32, 47, 57, 0.2);
+  -webkit-transform: scale(1.05);
+  transform: scale(1.05);
+}
+#mid-content .mid-div-3 h2{
+  margin-bottom: 60px;
+  text-align: center;
+}
+/* Bottom Content Style */
+#bottom-content{
+  min-height: 400px;
+  background: #e92c0c;
+}
+#bottom-content h2{
+  margin-top: 30px;
+  font-size: 35px;
+  padding-top: 10%;
+  text-align: center;
+  color: #fff;
+  margin-bottom: 20px;
+}
+#bottom-content h1{
+  font-size: 45px;
+  color: #fff;
+  text-align: center;
+}
+#bottom{
+  border-top: 2px solid red;
+  margin-top: 0px;
+  padding-top: 20px;
+  background-color: #202f39;
+  min-height: 350px;
+  color: #fff;
+}
+#bottom h1{
+  font-family: "PT Sans",sans-serif;
+}
+#bottom h4{
+  margin-bottom: 30px;
+  line-height: 1.5;
+}
+#buttom h2{
+  margin-bottom: 30px;
+}
+#bottom h5{
+  padding-top: 15px;
+  font-size: 28px;
+  font-weight: bold
+}
+#nav-list li{
+  line-height: 2rem;
+  list-style: none;
+  margin-left: -27px;
+}
+#nav-list li a{
+  color: #1fc9be;
+  font-size: 18px;
+  transition: .3s all ease;
+}
+#bottom li a:hover{
+  color: #fff;
+  text-decoration: none;
+}
+#social-link{
+  margin-top: 20px;
+  margin-left: -60px
+}
+#social-link li{
+  list-style: none;
+  float: left;
+  padding-left: 20px;
+}
+#social-link li a{
+  color: #fff;
+  text-decoration: none;
+}
+#social-link li a:hover{
+  color: #1fc9be;
 
 }
-.navbar{
-background-color: #F28500;	
+.margin-btm{
+  margin-bottom: 30px;
 }
-#juma  li a{
-	color: black;
+.red{
+  color: red;
 }
-#juma  li a:hover{
-	color: white;
+.red:hover{
+  text-decoration: none;
+  color: #000;
 }
-.btn.start-me{
-margin-top:400px;font-weight: bolder;
-font-size: 20px;
-margin-left: -80px;
-}
-.hover-slide{
-	position:absolute;
-z-index:10;
-}
-#faro{
-	background-color: FFFFBF;
-}
-#kawa  li a{
-	color: black;
-}
-#kawa  li a:hover{
-	color: blue;
-}
-#bala{
-	color: #F28500
+.footer-text-color{
+  color: #96a3ab;
 }
