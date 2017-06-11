@@ -12,6 +12,11 @@ from django.contrib.auth.forms import UserCreationForm
 def index(request):
     context = {}
     return render(request, 'index.html', context)
+
+def home(request):
+    context = {}
+    return render(request, 'home.html', context)
+
 def login(request):
 	context = {}
 	return render(request, 'login.html', context)
@@ -31,9 +36,13 @@ def volunteer(request):
 	context = {}
 	return render(request, 'volunteer.html', context)
 
-def BookNow(request):
+def bookNow(request):
 	context = {}
-	return render(request, 'BookNow.html', context)
+	return render(request, 'bookNow.html', context)
+
+def traveller_reg(request):
+	context = {}
+	return render(request, 'traveller_reg.html', context)
 
 def register(request):
 	if request == 'POST':
@@ -45,8 +54,4 @@ def register(request):
 	else:
 		form = UserCreationForm()
 		args = {'form': form}
-<<<<<<< HEAD
 	return render(request, 'register.html', args)
-=======
-	return render(request, 'register.html', args)
->>>>>>> 779635470fd01d924b127fef729b8836e0e42711

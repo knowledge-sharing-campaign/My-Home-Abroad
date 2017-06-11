@@ -1,10 +1,8 @@
-<<<<<<< HEAD
 .logo{
       width: 116px;
       margin-top: 42px;
   }
-=======
-body {
+body{
     position: relative;
     font-family: "Droid Serif", Georgia, "Times New Roman", Times, serif;
 }
@@ -279,4 +277,3 @@ body {
 .footer-text-color{
   color: #96a3ab;
 }
->>>>>>> 779635470fd01d924b127fef729b8836e0e42711

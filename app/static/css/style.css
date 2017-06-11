@@ -6,7 +6,7 @@
 
 }
 #section-1{
-  background-image: url("bg3.jpg");
+  background-image: url('../img/bg3.jpg');
   background-size: cover;
   min-height: 638px;
 }
@@ -33,15 +33,16 @@
 
 /*  Volenteer Page Style  **********************************************/
 #volenteer{
-  background-image: url("bg2.jpg");
+  background-image: url('../img/bg2.jpg');
   background-size: cover;
   background-attachment: fixed;
   color: #fff;
 }
+
 /* Index Page Style */
 #bg-image{
   margin-top: -20px;
-  background-image: url(bg.jpg) ;
+  background-image: url('../img/bg.jpg') ;
   background-position: center;
   background-attachment: fixed;
   background-size: cover;
