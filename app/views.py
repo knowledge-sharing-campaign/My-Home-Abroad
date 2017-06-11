@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+
+from django.contrib.auth.forms import UserCreationForm
 
 def index(request):
     context = {}
@@ -28,14 +30,15 @@ def volunteer(request):
 def BookNow(request):
 	context = {}
 	return render(request, 'BookNow.html', context)
-def register(request):
-	context = {}
-	return render(request, 'register.html', context)
 
-# def test(request):
-#       if request.method == 'POST':
-#           form = CreateAccountForm(request.POST)
-#           if form.is_valid():
-#               return HttpResponse('OK')
-#       else:
-#             return HttpResponse(json.dumps(form.errors))
+def register(request):
+	if request == 'POST':
+		form = UserCreationForm(request.POST)
+		if form.is_valid():
+			form.save()
+			return redirect('app/')
+
+	else:
+		form = UserCreationForm()
+		args = {'form': form}
+	return render(request, 'register.html', args)

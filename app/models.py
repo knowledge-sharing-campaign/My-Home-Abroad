@@ -8,9 +8,9 @@ class User(models.Model):
 	lastname = models.CharField(max_length=15)
 	email = models.CharField(max_length=25)
 	nationality = models.CharField(max_length=40)
-	phone = models.IntegerField(max_length=12)
+	phone = models.IntegerField()
 	gender = models.CharField(max_length=7)
-	age = models.IntegerField(max_length=3)
+	age = models.IntegerField()
 	
 	def __str__(self):
 		return self.firstname 
