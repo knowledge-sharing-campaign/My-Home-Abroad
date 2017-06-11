@@ -34,13 +34,12 @@
           <span style="background:red;"class="icon-bar"></span>
           <span style="background:red;"class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="{% url 'app:index' %}"><img class="logo" src="{% static "img/logo.png" %}"></a>
+      <a class="navbar-brand" href="{% url 'app:home' %}"><img class="logo" src="{% static "img/logo.png" %}"></a>
 
     </div>
     <div>
       <div class="collapse navbar-collapse navbar-right  a-color" id="myNavbar">
         <ul class="nav navbar-nav">
-          <li><a href="{% url 'app:home' %}">Home</a></li>
           <li><a href="{%url 'app:schedule'%}">My Scheduled Visits</a></li>
           <li><a href="{%url 'app:volunteer'%}">volunteer</a></li>
           <li><a href="{%url 'app:refer'%}">Refer a friend </a></li>
