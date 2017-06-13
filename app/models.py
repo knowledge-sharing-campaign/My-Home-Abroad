@@ -11,7 +11,12 @@ class User(models.Model):
 	phone = models.IntegerField()
 	gender = models.CharField(max_length=7)
 	age = models.IntegerField()
-	
-	def __str__(self):
-		return self.firstname 
 
+class Volunteer(models.Model):
+	firstname = models.CharField(max_length=15)
+	lastname = models.CharField(max_length=15)
+	email = models.CharField(max_length=25)
+	nationality = models.CharField(max_length=40)
+	phone = models.IntegerField()
+	gender = models.CharField(max_length=7)
+	age = models.IntegerField()

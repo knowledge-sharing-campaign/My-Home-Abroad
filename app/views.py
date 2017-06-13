@@ -1,13 +1,10 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, HttpResponse
 
-from django.contrib.auth.forms import UserCreationForm
-
-from django.shortcuts import render, redirect
-
-from django.contrib.auth.forms import UserCreationForm
+from app.forms import RegistrationForm
+from app.forms import VolunteerForm
 
 def index(request):
     context = {}
@@ -32,9 +29,9 @@ def refer(request):
 def schedule(request):
 	context = {}
 	return render(request, 'schedule.html', context)
-def volunteer(request):
+def profile(request):
 	context = {}
-	return render(request, 'volunteer.html', context)
+	return render(request, 'profile.html', context)
 
 def bookNow(request):
 	context = {}
@@ -45,13 +42,26 @@ def traveller_reg(request):
 	return render(request, 'traveller_reg.html', context)
 
 def register(request):
-	if request == 'POST':
-		form = UserCreationForm(request.POST)
+	if request.method == 'POST':
+		form = RegistrationForm(request.POST)
+		if form.is_valid():	
+			form.save()
+			return redirect('/profile')
+	else:
+		form = RegistrationForm()
+
+		args = {'form': form}
+		return render(request, 'register.html', args)
+def volunteer(request):
+	if request.method == 'POST':
+		form = VolunteerForm(request.POST)
 		if form.is_valid():
 			form.save()
-			return redirect('app/')
-
+			return redirect('/profile')
 	else:
-		form = UserCreationForm()
+		form = VolunteerForm()
+
 		args = {'form': form}
-	return render(request, 'register.html', args)
+		return render(request, 'volunteer.html', args)
+
+

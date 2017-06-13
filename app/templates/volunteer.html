@@ -160,4 +160,15 @@
     });
   </script>
 </html>
+
+{% block content %}
+
+<div class="container">
+<h1>Volunteer</h1>
+ <form method="post">
+ {% csrf_token%}
+ {{form.as_p}}
+ <button type="submit">Submit</button>
+</form>
+</div>
 {% endblock %}
