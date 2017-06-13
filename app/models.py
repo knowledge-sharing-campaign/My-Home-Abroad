@@ -10,8 +10,5 @@ class User(models.Model):
 	nationality = models.CharField(max_length=40)
 	phone = models.IntegerField()
 	gender = models.CharField(max_length=7)
-	age = models.IntegerField()
-	
-	def __str__(self):
-		return self.firstname 
+	DOB = models.IntegerField()
 

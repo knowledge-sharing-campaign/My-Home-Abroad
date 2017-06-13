@@ -23,7 +23,7 @@ class Migration(migrations.Migration):
                 ('nationality', models.CharField(max_length=40)),
                 ('phone', models.IntegerField(max_length=12)),
                 ('gender', models.CharField(max_length=7)),
-                ('age', models.IntegerField(max_length=3)),
+                ('DOB', models.IntegerField(max_length=3)),
             ],
         ),
     ]

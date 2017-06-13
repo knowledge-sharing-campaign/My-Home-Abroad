@@ -1,13 +1,9 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, HttpResponse
 
-from django.contrib.auth.forms import UserCreationForm
-
-from django.shortcuts import render, redirect
-
-from django.contrib.auth.forms import UserCreationForm
+from app.forms import RegistrationForm 
 
 def index(request):
     context = {}
@@ -45,13 +41,15 @@ def traveller_reg(request):
 	return render(request, 'traveller_reg.html', context)
 
 def register(request):
-	if request == 'POST':
-		form = UserCreationForm(request.POST)
-		if form.is_valid():
+	if request.method == 'POST':
+		form = RegistrationForm(request.POST)
+		if form.is_valid():	
 			form.save()
-			return redirect('app/')
-
+			return redirect('/home')
 	else:
-		form = UserCreationForm()
+		form = RegistrationForm()
+
 		args = {'form': form}
-	return render(request, 'register.html', args)
+		return render(request, 'register.html', args)
+
+
