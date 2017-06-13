@@ -22,11 +22,11 @@ class RegistrationForm(UserCreationForm):
 			)
 	def save(self, commit=True):
 		user = super(RegistrationForm, self).save(commit=False)
-		user.first_name = ('first_name')
-		user.last_name = ('last_name')
-		user.email = ('email')
-		user.DOB = ('DOB')
-		user.nationality = ('nationality') 
+		user.first_name = ('')
+		user.last_name = ('')
+		user.email = ('')
+		user.DOB = ('')
+		user.nationality = ('') 
 
 		if commit:
 			user.save()
