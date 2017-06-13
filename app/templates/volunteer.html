@@ -1,12 +1,12 @@
 {% extends 'base.html' %}
 
 {% block content %}
- <!DOCTYPE html>
+
+<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
-    <title>{% block title %}{% endblock%}</title>
-    <link rel="stylesheet" href="{% static "css/style.css">
+    <title>{% block title %}{% endblock %}</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -59,16 +59,12 @@
               </div>
             <!-- Age-->
               <div class="form-group">
-                        <label class="col-md-3 control-label" for="dob">Date fo Birth</label>
-                        <div class="col-md-6">
-                          <div class="input-group">
-                            <div class="input-group-addon">
-                              <i class="fa fa-birthday-cake"></i>
-                            </div>
-                            <input id="age" type="date" name="dob" class="form-control input-lg" required="">
-                          </div>
-                        </div>
-                      </div>
+                <label class="col-md-1 control-label" for="age">Date</label>
+                <div class="col-md-3">
+                  <input id="age" type="date" name="age" class="form-control input-lg" required="">
+                </div>
+              </div>
+            </div>
           <!-- Address-->
             <div class="form-group">
               <label for="country" class="col-sm-3 control-label">Current City</label>
@@ -164,8 +160,4 @@
     });
   </script>
 </html>
-
-
-
-
 {% endblock %}

@@ -1,12 +1,10 @@
-.logo{
-      width: 116px;
-      margin-top: 42px;
-  }
-body{
+body {
     position: relative;
     font-family: "Droid Serif", Georgia, "Times New Roman", Times, serif;
 }
-
+li{
+  list-style: none;
+}
 /* Top HEad Section Style */
 .top-head{
   height: 50px;
@@ -56,6 +54,9 @@ body{
 .a-color li{
   padding-top: 14px;
 }
+.a-color li:hover{
+  background: #f28500;
+}
 .a-color li a{
   text-align: center;
   color: #202f39;
@@ -66,39 +67,27 @@ body{
   transition: 0.3s ease-out all;
 }
 .a-color li a:hover{
-  color: #e92c0c;
-  border-top: 3px solid red;
+  color: #f28500;
   transition: 0.3s ease-out all;
 }
 .margin-top{
   margin-top: -20px;
 }
 .logo{
-  width: 195px;
+  width: 149px;
   position: absolute;
-  top: -44px;
+  top: -43%;
+  left: 5%;
 }
 /* Booking Section Style  */
 .booking-section{
   position: absolute;
-  top: 20%;
+  top: 30%;
   left: 10%;
   width: 80%;
   color: #fff;
   text-align: center;
   text-shadow: 0 1px 2px rgba(0, 0, 0, .6);
-}
-/* Booking heading Style */
-.booking-section h1{
-  line-height: 1.16;
-  font-size: 60px;
-  color: #fff;
-}
-
-/*Booing Text */
-.booking-section .text{
-  margin-bottom: 30px;
-  font-size: 23px;
 }
 /* Booking Button */
 .booking-btn [type=submit]{
@@ -125,46 +114,60 @@ body{
 /* top Content Style */
 #top-content{
   padding-top: 70px;
-  background: #ffffbf;
-  min-height: 250px;
+  background: #f2f2f2;
   color: #fff;
-  overflow: hidden;
   margin-bottom: 60px;
+  min-height: 450px;
 }
-.heading-h1{
-  color: #000;
-  text-align: center;
-  font-size: 50px;
-  font-weight: 700;
+#top-content .heading-h1{
+  color: #4c4c4c;
+  padding-left: 62px;
+  margin: 0 0 26px;
+  text-align: left;
+  font: 700 30px/30px 'Open Sans',"Helvetica Neue",Helvetica,Arial,sans-serif;
 }
-#top-content h2{
-  color: #000;
-  font-size: 20px;
-  font-weight: bold;
-  margin-bottom: 30px;
+#top-content strong {
+  width: 20%;
+  background: #fdb902;
+  position: relative;
+  display: block;
+  height: 6px;
+  margin-top: 18px;
 }
-#top-content p{
-  color: #000;
-  letter-spacing: 1;
+#top-content .heading-h1 hr{
+  position: absolute;
+  top: -21px;
+  left: 0;
+  width: 120px;
+  height: 100%;
+  background: #f28500;
+  display: inline-block;
+  margin-bottom: 20px;
 }
-#top-content .div-3{
-  padding: 20px;
-  border: 1px solid #ebebeb;
-  width: 22%;
-  margin-left: 2%;
-  color: #939393;
+#top-content .number{
+  float: left;
+  padding: 0;
+  font-size: 60px;
+  color: #f28500;
 }
-#top-content .div-3:hover{
-  -webkit-box-shadow: 6px 8px 24px 0 rgba(32, 47, 57, 0.2);
-  box-shadow: 6px 8px 24px 0 rgba(32, 47, 57, 0.2);
-  -webkit-transform: translateY(-10px);
-  transform: translateY(-10px);
-  border: 1px solid #ebebeb;
-  -webkit-transition: 0.3s ease-out all;
-  -o-transition: 0.3s ease-out all;
-  transition: 0.3s ease-out all;
+#top-content .number b{
+  color: #fdb902;
 }
-
+#top-content .caption{
+  float: left;
+  margin-left: 15px;
+  overflow: hidden;
+}
+#top-content .caption h3{
+  font: 700 23px 'Open Sans',"Helvetica Neue",Helvetica,Arial,sans-serif;
+  color: #2c3e50;
+  text-align: ;
+}
+#top-content .icon{
+  padding: 4%;
+  width: 155px;
+  height: 110px;
+}
 /* Mid Content Style */
 #mid-content{
   min-height: 520px;
@@ -172,7 +175,7 @@ body{
 #mid-content .mid-div-3{
   width: 30.5%;
   margin-left: 2.5%;
-  border-bottom: 2px solid red;
+  border-bottom: 2px solid #f28500;
 }
 #mid-content img{
   max-width: 100%;
@@ -194,24 +197,46 @@ body{
 }
 /* Bottom Content Style */
 #bottom-content{
-  min-height: 400px;
-  background: #e92c0c;
+  padding-top: 12%;
+  background-image: url("../img/counter-bg.jpg");
+  background-position: center;
+  background-repeat: ;
+  background-attachment: fixed;
+  background-size: cover;
+  min-height: 500px;
+
 }
-#bottom-content h2{
-  margin-top: 30px;
-  font-size: 35px;
-  padding-top: 10%;
+.fa-5x{
+  color: #f28500;
   text-align: center;
-  color: #fff;
-  margin-bottom: 20px;
+  margin-bottom: 5%;
 }
-#bottom-content h1{
-  font-size: 45px;
+#bottom-content .counter-number{
+  font: 700 38px/42px "Ubuntu", Helvetica, Arial, sans-serif;
+  color: #fff;
+  font-size: 48px;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  opacity: 1;
+}
+#bottom-content .counter-text{
+  font-size: 25px;
+  color: #fff;
+}
+#bottom-content .heading-h3{
   color: #fff;
   text-align: center;
+  line-height: 1.2;
+  font-size: 40px;
+  font-family: "Arvo", "Times New Roman", Times, serif;
+  font-weight: 700;
+  margin-bottom: 30px;
 }
+/* Footer Style */
 #bottom{
-  border-top: 2px solid red;
+  border-top: 2px solid #f28500;
   margin-top: 0px;
   padding-top: 20px;
   background-color: #202f39;
@@ -234,7 +259,7 @@ body{
   font-weight: bold
 }
 #nav-list li{
-  line-height: 2rem;
+  line-height: 1.8rem;
   list-style: none;
   margin-left: -27px;
 }
@@ -247,33 +272,36 @@ body{
   color: #fff;
   text-decoration: none;
 }
-#social-link{
+.social-link{
   margin-top: 20px;
   margin-left: -60px
 }
-#social-link li{
+.social-link li{
   list-style: none;
   float: left;
   padding-left: 20px;
 }
-#social-link li a{
+.social-link li a{
   color: #fff;
   text-decoration: none;
 }
-#social-link li a:hover{
-  color: #1fc9be;
+.social-link li a:hover{
+  color: red;
 
 }
 .margin-btm{
   margin-bottom: 30px;
 }
 .red{
-  color: red;
+  color: #000;
 }
 .red:hover{
   text-decoration: none;
-  color: #000;
+  color: #202f39;
 }
 .footer-text-color{
   color: #96a3ab;
+}
+.min-height{
+    min-height: 500px;
 }

@@ -9,6 +9,7 @@
   background-image: url('../img/bg3.jpg');
   background-size: cover;
   min-height: 638px;
+  margin-top: -20px;
 }
 .box{
   padding-top: 40px;
@@ -36,18 +37,20 @@
   background-image: url('../img/bg2.jpg');
   background-size: cover;
   background-attachment: fixed;
+  margin-top: -20px;
   color: #fff;
+  min-height: 700px;
 }
 
 /* Index Page Style */
 #bg-image{
-  margin-top: -20px;
-  background-image: url('../img/bg.jpg') ;
+  margin-top: 0px;
+  background-image: url('../img/bg.jpg');
   background-position: center;
   background-attachment: fixed;
   background-size: cover;
   width: 100%;
-  min-height: 585px;
+  min-height: 610px;
   color:#fff;
 }
 #bg-image h1{

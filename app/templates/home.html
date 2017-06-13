@@ -31,40 +31,59 @@
       </div>
     </div>
 <!-- Booking Button -->
-    <div class="booking-section">
-      <h1>Example page header </h1>
-      <p class="text-center text">We're proud that our law firm offers top-notch legal services for a nationwide affordable pricing! With us you'll never feel like the lawyers are just robbers in suits, besides, we win 98% of all cases. So with us, you chances of winning are as high as they possibly can be!</p>
-      <a class=" booking-btn" href="{%url 'app:bookNow'%}">
-        <input class="btn btn-lg btn-primary" type="Button" name="" value="Book Now">
-      </a>
-    </div>
+
+<a class="navbar-brand" href="index.html"> <img class="logo" src="img/logo.png" alt=""></a>
+<div class="booking-section">
+  <a class=" booking-btn" href="{%url 'app:bookNow'%}">
+    <input class="btn" type="submit" name="" value="Book Now">
+  </a>
+</div>
   </div>
 </div>
 </section>
 <section id="top-content">
   <div class="container-fluid">
-    <h1 class="margin-btm heading-h1">Practice Areas</h1>
+    <h2 class="margin-btm heading-h1">HOW ITS WORKS<strong><hr></strong></h2>
     <div class="row">
-      <div class="col-md-2 div-3">
-        <h2>Book a Service</h2>
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting </p>
+      <div class="col-sm-3">
+        <div class="number">
+          <span><b>0</b>1</span>
+        </div>
+        <div class="caption">
+          <h3>Book Service</h3>
+          <img class="icon" src="{% static "img/book-service.png" %}" alt="">
+        </div>
       </div>
-      <div class="col-md-2 div-3">
-        <h2>Receive a Conformation</h2>
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,</p>
+      <div class="col-sm-3">
+        <div class="number">
+          <span><b>0</b>2</span>
+        </div>
+        <div class="caption">
+          <h3>Recive Confirmation</h3>
+          <img class="icon" src="{% static "img/book-service.png" %}" alt="">
+        </div>
       </div>
-      <div class="col-md-2 div-3">
-        <h2>Volunteer Contacts</h2>
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,</p>
+      <div class="col-sm-3">
+        <div class="number">
+          <span><b>0</b>3</span>
+        </div>
+        <div class="caption">
+          <h3>Volunteer Contacts</h3>
+          <img class="icon" src="{% static "img/business-cards.png" %}" alt="">
+        </div>
       </div>
-      <div class="col-md-2 div-3">
-        <h2>Meet up and enjoy</h2>
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,</p>
+      <div class="col-sm-3">
+        <div class="number">
+          <span><b>0</b>4</span>
+        </div>
+        <div class="caption">
+          <h3>Meet up & Enjoy</h3>
+          <img class="icon" src="{% static "icons/shaking-hands.png" %}" alt="">
+        </div>
       </div>
     </div>
   </div>
 </section>
-
 <section id="mid-content">
   <div class="container-fluid margin-btm">
     <h1 class="margin-btm heading-h1">Practice Areas</h1
@@ -96,8 +115,41 @@
 </section>
 <section id="bottom-content">
   <div class="container-fluid">
-    <h2>We have a long history</h2>
-    <h1>of solving legal battles for businesses</h1>
+    <div class="row  text-center">
+
+      <div class="col-sm-3">
+        <div class="counter-icon">
+          <i class="fa fa-flag-o fa-5x" aria-hidden="true"></i>
+          <div class="counter-number">0115</div>
+          <h5 class="counter-text">Countries</h5>
+        </div>
+      </div>
+
+      <div class="col-sm-3">
+        <div class="counter-icon">
+          <img class="fa-5x" src="{% static "img/cityscape.png" %}" alt="">
+          <div class="counter-number">0090</div>
+          <h5 class="counter-text">Cities</h5>
+        </div>
+      </div>
+
+      <div class="col-sm-3">
+        <div class="counter-icon">
+          <i class="fa fa-user-o fa-5x" aria-hidden="true"></i>
+          <div class="counter-number">0090</div>
+          <h5 class="counter-text">Users</h5>
+        </div>
+      </div>
+
+      <div class="col-sm-3">
+        <div class="counter-icon">
+          <i class="fa fa-users fa-5x" aria-hidden="true"></i>
+          <div class="counter-number">0090</div>
+          <h5 class="counter-text">Volunteer</h5>
+        </div>
+      </div>
+
+    </div>
   </div>
 </section>
 
