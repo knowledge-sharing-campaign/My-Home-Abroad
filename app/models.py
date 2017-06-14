@@ -3,6 +3,9 @@ from __future__ import unicode_literals
 
 from django.db import models
 
+from django.contrib.auth.models import User
+
+
 class User(models.Model):
 	firstname = models.CharField(max_length=15)
 	lastname = models.CharField(max_length=15)
@@ -20,3 +23,16 @@ class Volunteer(models.Model):
 	phone = models.IntegerField()
 	gender = models.CharField(max_length=7)
 	age = models.IntegerField()
+
+class BookNow(models.Model):
+	first_name = models.CharField(max_length=15)
+	last_name = models.CharField(max_length=15)
+	gender = models.CharField(max_length=7)
+	age = models.IntegerField()
+	email = models.EmailField(max_length=25)
+	nationality = models.CharField(max_length=40)
+	number_of_Adult_travellers = models.IntegerField()
+	number_of_Children_travellers = models.IntegerField()
+	travelling_From = models.CharField(max_length=40)
+	travelling_To = models.CharField(max_length=40)
+	arrival_date = models.DateField()

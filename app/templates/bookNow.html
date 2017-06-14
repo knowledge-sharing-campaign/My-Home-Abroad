@@ -2,24 +2,16 @@
 
 {% load staticfiles %}
 
-{% block title%}{% endblock %}
-
 {% block content%}
-<br>
-<br>
-<br>
-<a class=" booking-btn" href="{%url 'app:traveller_reg'%}">
-  <input class="btn btn-lg" type="Button" name="" value="Register">
 
-<div class="container">
-<form  method="post">
-<p><label for="date">Date:</label><input type="text" name="date" value={% now "Y-m-d" %} /></p>
+	<div class="container">
+	<h1>Booking</h1>
+	 <form method="post">
+	 {% csrf_token%}
+	 {{form.as_p}}
+	 <button type="submit">Book</button>
+	</form>
+	</div>
 
-<p><label for="cost">Cost:</label><input type="text" name="cost" value="0" id="cost" /></p>
-
-<input type="submit" name="submit" />
-
-</form>
-</div>
 
 {% endblock %}

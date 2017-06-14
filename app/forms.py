@@ -64,3 +64,51 @@ class VolunteerForm(UserCreationForm):
 		 user.save()
 
 		return user
+
+class BookNowForm(UserCreationForm):
+	first_name = forms.CharField(required=True)
+	last_name = forms.CharField(required=True)
+	gender = forms.CharField(required=True)
+	age = forms.IntegerField(required=True)
+	email = forms.EmailField(required=True)
+	nationality = forms.CharField(required=True)
+	number_of_Adult_travellers = forms.IntegerField(required=True)
+	number_of_Children_travellers = forms.IntegerField(required=True)
+	travelling_From = forms.CharField(required=True)
+	travelling_To = forms.CharField(required=True)
+	arrival_date = forms.DateField(required=True)
+	class Meta:
+		model = User
+		fields = (
+			'first_name',
+			'last_name',
+			'gender',
+			'age', 
+			'email',
+			'nationality',
+			'number_of_Adult_travellers',
+			'number_of_Children_travellers',
+			'travelling_From',
+			'travelling_To',
+			'arrival_date',
+			)
+
+	def save(self, commit=True):
+		user = super(BookingForm, self).save(commit=False)
+		user.first_name = ('first_name')
+		user.last_name = ('last_name')
+		user.gender = ('gender')
+		user.DOB = ('DOB')
+		user.email = ('email')
+		user.nationality = ('nationality')
+		user.number_of_Adult_travellers = ('number_of_Adult_travellers')
+		user.number_of_Children_travellers = ('number_of_Children_travellers')
+		user.travelling_From = ('travelling_From')
+		user.travelling_To = ('travelling_To')
+		user.arrival_date = ('arrival_date')
+
+		if commit:
+		 user.save()
+
+		return user
+

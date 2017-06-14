@@ -4,7 +4,10 @@ from __future__ import unicode_literals
 from django.shortcuts import render, redirect, HttpResponse
 
 from app.forms import RegistrationForm
+
 from app.forms import VolunteerForm
+
+from app.forms import BookNowForm
 
 def index(request):
     context = {}
@@ -52,6 +55,7 @@ def register(request):
 
 		args = {'form': form}
 		return render(request, 'register.html', args)
+
 def volunteer(request):
 	if request.method == 'POST':
 		form = VolunteerForm(request.POST)
@@ -63,5 +67,17 @@ def volunteer(request):
 
 		args = {'form': form}
 		return render(request, 'volunteer.html', args)
+
+def bookNow(request):
+	if request.method == 'POST':
+		form = BookNowForm(request.POST)
+		if form.is_valid():	
+			form.save()
+			return redirect('/schedule')
+	else:
+		form = BookNowForm()
+
+		args = {'form': form}
+		return render(request, 'bookNow.html', args)
 
 
