@@ -1,4 +1,6 @@
 from django import forms
+from django.forms import ModelForm
+from app.models import BookNow
 from django.contrib.auth.models import User
 from . models import Volunteer
 from django.contrib.auth.forms import UserCreationForm
@@ -65,7 +67,7 @@ class VolunteerForm(UserCreationForm):
 
 		return user
 
-class BookNowForm(UserCreationForm):
+class BookNowForm(forms.ModelForm):
 	first_name = forms.CharField(required=True)
 	last_name = forms.CharField(required=True)
 	gender = forms.CharField(required=True)
