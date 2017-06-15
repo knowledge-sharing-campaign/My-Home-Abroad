@@ -78,6 +78,7 @@ class BookNowForm(forms.ModelForm):
 	number_of_Children_travellers = forms.IntegerField(required=True)
 	travelling_From = forms.CharField(required=True)
 	travelling_To = forms.CharField(required=True)
+	arrival_city = forms.CharField(max_length=40)
 	arrival_date = forms.DateField(required=True)
 	class Meta:
 		model = User
@@ -92,11 +93,12 @@ class BookNowForm(forms.ModelForm):
 			'number_of_Children_travellers',
 			'travelling_From',
 			'travelling_To',
+			'arrival_city',
 			'arrival_date',
 			)
 
 	def save(self, commit=True):
-		user = super(BookingForm, self).save(commit=False)
+		user = super(BookNowForm, self).save(commit=False)
 		user.first_name = ('first_name')
 		user.last_name = ('last_name')
 		user.gender = ('gender')
@@ -107,10 +109,11 @@ class BookNowForm(forms.ModelForm):
 		user.number_of_Children_travellers = ('number_of_Children_travellers')
 		user.travelling_From = ('travelling_From')
 		user.travelling_To = ('travelling_To')
+		user.arrival_city = ('arrival_city')
 		user.arrival_date = ('arrival_date')
 
 		if commit:
-		 user.save()
+		 users.save()
 
 		return user
 

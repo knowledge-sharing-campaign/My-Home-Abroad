@@ -7,6 +7,8 @@ from app.forms import RegistrationForm
 
 from app.forms import VolunteerForm
 
+from django.contrib.auth.models import User
+
 from app.forms import BookNowForm
 
 def index(request):
@@ -69,15 +71,18 @@ def volunteer(request):
 		return render(request, 'volunteer.html', args)
 
 def bookNow(request):
+	user_list = User.objects.all()
 	if request.method == 'POST':
 		form = BookNowForm(request.POST)
 		if form.is_valid():	
-			form.save()
-			return redirect('/schedule')
+
+			user_obj = form.save()
+			
+			return HttpResponseRedirect('/schedule')
+	
 	else:
 		form = BookNowForm()
-
-		args = {'form': form}
-		return render(request, 'bookNow.html', args)
-
+	return render(request, 'bookNow.html', {
+	        'form': form, 'user_list': user_list
+	        })
 

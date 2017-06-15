@@ -35,4 +35,5 @@ class BookNow(models.Model):
 	number_of_Children_travellers = models.IntegerField()
 	travelling_From = models.CharField(max_length=40)
 	travelling_To = models.CharField(max_length=40)
+	arrival_city = models.CharField(max_length=50)
 	arrival_date = models.DateField()
