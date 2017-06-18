@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
-from django.shortcuts import render, redirect, HttpResponse
+from django.shortcuts import render, redirect, HttpResponseRedirect
+
+from django.http import HttpResponse
 
 from app.forms import RegistrationForm
 
@@ -71,18 +73,18 @@ def volunteer(request):
 		return render(request, 'volunteer.html', args)
 
 def bookNow(request):
-	user_list = User.objects.all()
-	if request.method == 'POST':
-		form = BookNowForm(request.POST)
-		if form.is_valid():	
-
-			user_obj = form.save()
-			
-			return HttpResponseRedirect('/schedule')
-	
-	else:
-		form = BookNowForm()
-	return render(request, 'bookNow.html', {
-	        'form': form, 'user_list': user_list
-	        })
-
+    user_list = User.objects.all()
+    if request.method == 'POST':
+        form = BookNowForm(request.POST)
+        if form.is_valid():
+            user_obj = form.save() 
+            user_obj.save()
+            
+            return HttpResponseRedirect('/schedule')
+        else:
+        	return HttpResponse("Failed")
+    else:
+        form = BookNowForm()
+    	return render(request, 'bookNow.html', {
+        'form': form, 'user_list': user_list
+        })

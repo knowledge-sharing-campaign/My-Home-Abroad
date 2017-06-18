@@ -1,8 +1,7 @@
 from django import forms
 from django.forms import ModelForm
-from app.models import BookNow
 from django.contrib.auth.models import User
-from . models import Volunteer
+from . models import Volunteer, BookNow
 from django.contrib.auth.forms import UserCreationForm
 
 class RegistrationForm(UserCreationForm):
@@ -68,20 +67,9 @@ class VolunteerForm(UserCreationForm):
 		return user
 
 class BookNowForm(forms.ModelForm):
-	first_name = forms.CharField(required=True)
-	last_name = forms.CharField(required=True)
-	gender = forms.CharField(required=True)
-	age = forms.IntegerField(required=True)
-	email = forms.EmailField(required=True)
-	nationality = forms.CharField(required=True)
-	number_of_Adult_travellers = forms.IntegerField(required=True)
-	number_of_Children_travellers = forms.IntegerField(required=True)
-	travelling_From = forms.CharField(required=True)
-	travelling_To = forms.CharField(required=True)
-	arrival_city = forms.CharField(max_length=40)
-	arrival_date = forms.DateField(required=True)
+	
 	class Meta:
-		model = User
+		model = BookNow
 		fields = (
 			'first_name',
 			'last_name',
@@ -98,22 +86,9 @@ class BookNowForm(forms.ModelForm):
 			)
 
 	def save(self, commit=True):
-		user = super(BookNowForm, self).save(commit=False)
-		user.first_name = ('first_name')
-		user.last_name = ('last_name')
-		user.gender = ('gender')
-		user.DOB = ('DOB')
-		user.email = ('email')
-		user.nationality = ('nationality')
-		user.number_of_Adult_travellers = ('number_of_Adult_travellers')
-		user.number_of_Children_travellers = ('number_of_Children_travellers')
-		user.travelling_From = ('travelling_From')
-		user.travelling_To = ('travelling_To')
-		user.arrival_city = ('arrival_city')
-		user.arrival_date = ('arrival_date')
-
+		user = super(BookNowForm, self).save()
+		
 		if commit:
-		 users.save()
+		 user.save()
 
 		return user
-
