@@ -7,12 +7,16 @@
 	<body>
 		
 	<div class="container">
-	<h1 class="text-center bookNow-title "> Make a Booking </h1>
-	 <form method="post" action="">
-	 {% csrf_token%}
-	 {{form.as_p}}
-	 <button type="submit">Book</button>
-	</form>
+	<div class="page-header text-center">	
+	  <h1 class="text-center bookNow-title "> Make your Booking </h1>
+	<div class="row">
+	  	<form method="post" action="">
+		 {% csrf_token%}
+		 {{form.as_p}}
+		 <button type="submit">Book</button>
+		</form>
+	</div>
+	</div>
 	</div>
 	
 	</body>

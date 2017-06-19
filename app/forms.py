@@ -71,18 +71,19 @@ class BookNowForm(forms.ModelForm):
 	class Meta:
 		model = BookNow
 		fields = (
-			'first_name',
+			'first_name',			
 			'last_name',
 			'gender',
 			'age', 
 			'email',
 			'nationality',
-			'number_of_Adult_travellers',
-			'number_of_Children_travellers',
 			'travelling_From',
 			'travelling_To',
 			'arrival_city',
+			'number_of_Adult_travellers',
+			'number_of_Children_travellers',
 			'arrival_date',
+			'purpose',
 			)
 
 	def save(self, commit=True):
