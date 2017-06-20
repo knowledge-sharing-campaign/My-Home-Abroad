@@ -35,31 +35,24 @@ class RegistrationForm(UserCreationForm):
 
 		return user
 
-class VolunteerForm(UserCreationForm):
-	email = forms.EmailField(required=True)
-	phone_no = forms.IntegerField(required=True)
-	nationality = forms.CharField(required=True)
-	DOB = forms.CharField(required=True)
+class VolunteerForm(forms.ModelForm):
 	class Meta:
-		model = User
+		model = Volunteer
 		fields = (
-			'username',
 			'first_name',
 			'last_name',
 			'email',
-			'phone_no',
-			'DOB',
-			'nationality',
-			'password1',
-			'password2',
+			'birth_date',
+			'gender',
+			'phone',
+            'nationality',
+			'current_city',
+			'address',
+			'password',
+			'conform_password',
 			)
 	def save(self, commit=True):
-		user = super(VolunteerForm, self).save(commit=False)
-		user.first_name = ('first_name')
-		user.last_name = ('last_name')
-		user.email = ('email')
-		user.DOB = ('DOB')
-		user.nationality = ('nationality')
+		user = super(VolunteerForm, self).save()
 
 		if commit:
 		 user.save()

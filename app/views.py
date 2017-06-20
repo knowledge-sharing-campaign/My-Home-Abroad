@@ -61,16 +61,21 @@ def register(request):
 		return render(request, 'register.html', args)
 
 def volunteer(request):
-	if request.method == 'POST':
-		form = VolunteerForm(request.POST)
-		if form.is_valid():
-			form.save()
-			return redirect('/profile')
-	else:
-		form = VolunteerForm()
+    user_list = User.objects.all()
+    if request.method == 'POST':
+        form = VolunteerForm(request.POST)
+        if form.is_valid():
+            user_obj = form.save()
+            user_obj.save()
 
-		args = {'form': form}
-		return render(request, 'volunteer.html', args)
+            return HttpResponseRedirect('/login')
+        else:
+        	return HttpResponse("Please fill the form correctly")
+    else:
+        form = VolunteerForm()
+    	return render(request, 'volunteer.html', {
+        'form': form, 'user_list': user_list
+        })
 
 def bookNow(request):
     user_list = User.objects.all()

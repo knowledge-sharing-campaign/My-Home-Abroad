@@ -16,13 +16,18 @@ class User(models.Model):
 	age = models.IntegerField()
 
 class Volunteer(models.Model):
-	firstname = models.CharField(max_length=15)
-	lastname = models.CharField(max_length=15)
+	first_name = models.CharField(max_length=25)
+	last_name = models.CharField(max_length=25)
 	email = models.CharField(max_length=25)
-	nationality = models.CharField(max_length=40)
-	phone = models.IntegerField()
+	birth_date = models.IntegerField()
 	gender = models.CharField(max_length=7)
-	age = models.IntegerField()
+	phone = models.IntegerField()
+	nationality = models.CharField(max_length=40)
+	current_city = models.CharField(max_length=40)
+	address = models.CharField(max_length=50)
+	password = models.CharField(max_length=40)
+	conform_password = models.CharField(max_length=40)
+
 
 class BookNow(models.Model):
 	first_name = models.CharField(max_length=15)
