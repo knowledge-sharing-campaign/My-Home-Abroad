@@ -70,7 +70,7 @@ def volunteer(request):
 
             return HttpResponseRedirect('/login')
         else:
-        	return HttpResponse("Please fill the form correctly")
+        	return HttpResponseRedirect("/volunteer")
     else:
         form = VolunteerForm()
     	return render(request, 'volunteer.html', {
