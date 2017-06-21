@@ -8,6 +8,8 @@ from django.http import HttpResponse
 from app.forms import RegistrationForm
 
 from app.forms import VolunteerForm
+from .models import Volunteer
+
 
 from django.contrib.auth.models import User
 
@@ -61,14 +63,19 @@ def register(request):
 		return render(request, 'register.html', args)
 
 def volunteer(request):
-    user_list = User.objects.all()
+    user_list = Volunteer.objects.all()
     if request.method == 'POST':
         form = VolunteerForm(request.POST)
         if form.is_valid():
             user_obj = form.save()
             user_obj.save()
 
-            return HttpResponseRedirect('/login')
+            return render(request, 'volunteer_profile.html', {"first_name":request.POST.get('first_name'), "last_name":request.POST.get('last_name'),
+															  "email":request.POST.get('email'), "birth_date":request.POST.get('birth_date'),
+															  "gender":request.POST.get('gender'),"phone":request.POST.get('phone'),"nationality":request.POST.get('nationality'),
+															  "current_city":request.POST.get('current_city'),"address":request.POST.get('address'),
+															  }
+						  )
         else:
         	return HttpResponseRedirect("/volunteer")
     else:
@@ -76,6 +83,7 @@ def volunteer(request):
     	return render(request, 'volunteer.html', {
         'form': form, 'user_list': user_list
         })
+
 
 def bookNow(request):
     user_list = User.objects.all()
