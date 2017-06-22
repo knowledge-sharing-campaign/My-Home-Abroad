@@ -1,37 +1,29 @@
 from django import forms
 from django.forms import ModelForm
 from django.contrib.auth.models import User
-from . models import Volunteer, BookNow
+from . models import Volunteer, BookNow, Register
 from django.contrib.auth.forms import UserCreationForm
 
-class RegistrationForm(UserCreationForm):
-	email = forms.EmailField(required=True)
-	phone_no = forms.IntegerField(required=True)
-	nationality = forms.CharField(required=True)
-	DOB = forms.CharField(required=True)
+class RegisterForm(forms.ModelForm):
 	class Meta:
-		model = User
+		model = Register
 		fields = (
 			'username',
 			'first_name',
 			'last_name',
 			'email',
-			'phone_no',
-			'DOB',
-			'nationality',
-			'password1',
-			'password2',
+			'birth_date',
+			'gender',
+			'phone',
+            'nationality',
+			'password',
+			'conform_password',
 			)
 	def save(self, commit=True):
-		user = super(RegistrationForm, self).save(commit=False)
-		user.first_name = ('')
-		user.last_name = ('')
-		user.email = ('')
-		user.DOB = ('')
-		user.nationality = ('') 
+		user = super(RegisterForm, self).save()
 
 		if commit:
-			user.save()
+		 user.save()
 
 		return user
 

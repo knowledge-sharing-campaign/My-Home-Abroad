@@ -1,14 +1,146 @@
 {% extends 'base.html' %}
 
+{% load staticfiles %}
 
-{% block content %}
+{% block content%}
 
-<div class="container">
-<h1>Register</h1>
- <form method="post">
- {% csrf_token%}
- {{form.as_p}}
- <button type="submit">Submit</button>
-</form>
-</div>
+<body>
+<section id="volenteer">
+    <div class="container">
+        <div class="row">
+            <div class="page-header text-center">
+                <h1> Create an Account </h1>
+            </div>
+            <form method="post" action="" class="form-horizontal box">
+                {% csrf_token%}
+                <fieldset>
+                    <!-- Name-->
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label" for="username">User Name</label>
+                        <div class="col-sm-6">
+                            <input type="username" placeholder="user name" class="form-control input-lg" name="username">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label" for="fn">First name</label>
+                        <div class="col-md-3">
+                            <input id="first_name" name="first_name" type="text" placeholder="First name" minlength="2" class="form-control input-lg" required="" autofocus="">
+                        </div>
+                        <div class="col-md-3">
+                            <input id="last_name" name="last_name" type="text" placeholder="Last Name" class="form-control input-lg" required="">
+                        </div>
+                    </div>
+
+                    <!-- Mobile Number-->
+                    <div class="form-group">
+                        <label class="col-md-3 control-label" for="phone">Mobile Number</label>
+                        <div class="col-md-6">
+                            <input id="phone" name="phone" type="text" placeholder="Phone" class="form-control input-lg" min="9" max="10" required="">
+                        </div>
+                    </div>
+
+
+                    <!-- Email-->
+                    <div class="form-group">
+                        <label class="col-md-3 control-label" for="email">Email</label>
+                        <div class="col-md-6">
+                            <input id="email" name="email" type="text" placeholder="Email" class="form-control input-lg" required="">
+                        </div>
+                    </div>
+
+
+                    <!-- gender -->
+                    <div class="form-group">
+                        <label class="col-md-3 control-label input-lg" for="gender">Gender</label>
+                        <div class="col-md-2">
+                            <select id="nationality" class="form-control input-lg" name="gender">
+                                <option>--select--</option>
+                                <option>Male</option>
+                                <option>Female</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+
+                        <!-- DOB -->
+                        <div class="form-group">
+                            <label class="col-md-1 control-label" for="birth_date">Date Of Birth</label>
+                            <div class="col-md-3">
+                                <input id="birth_date" type="date" name="birth_date" class="form-control input-lg" min="16" max="90" value="16" required="">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- NATIONALITY -->
+                    <div class="form-group">
+                        <label for="nationality" class="col-sm-3 control-label">Nationality</label>
+                        <div class="col-sm-6">
+                            <select id="nationality" class="form-control input-lg" name="nationality">
+                                <option>Afghanistan</option>
+                                <option>Bahamas</option>
+                                <option>Cambodia</option>
+                                <option>Denmark</option>
+                                <option>Ecuador</option>
+                                <option>Fiji</option>
+                                <option>Gabon</option>
+                                <option>Haiti</option>
+                            </select>
+                        </div>
+                    </div> 
+
+
+                    <!-- Password-->
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label" for="password1">Password</label>
+                        <div class="col-sm-6">
+                            <input type="password" class="input-lg form-control" name="password" id="password1" placeholder="New Password" autocomplete="off">
+                            <span id="8char" class="glyphicon glyphicon-remove" style="color:#FF0004;"></span> <i>6 Characters Long</i>
+                        </div>
+                    </div>
+                    <!-- Conform Password-->
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label" for="password2">Conform Password</label>
+                        <div class="col-sm-6">
+                            <input type="password" class="input-lg form-control" name="conform_password" id="password2" placeholder="Repeat Password" autocomplete="off">
+                            <span id="pwmatch" class="glyphicon glyphicon-remove" style="color:#FF0004;"></span> Passwords Match
+                        </div>
+                    </div>
+                    <!-- Button -->
+                    <div class="form-group">
+                        <label class="col-md-3 control-label" for="submit"></label>
+                        <div class="col-md-6">
+                            <button id="submit" name="submit" class="user-btn btn">Register</button>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</section>
+</body>
+<script type="text/javascript">
+    $("input[type=password]").keyup(function(){
+        <!-- Min Lenght 6 -->
+        if($("#password1").val().length >= 6){
+            $("#8char").removeClass("glyphicon-remove");
+            $("#8char").addClass("glyphicon-ok");
+            $("#8char").css("color","#00A41E");
+        }else{
+            $("#8char").removeClass("glyphicon-ok");
+            $("#8char").addClass("glyphicon-remove");
+            $("#8char").css("color","#FF0004");
+        }
+        <!-- Match Password -->
+        if($("#password1").val() == $("#password2").val()){
+            $("#pwmatch").removeClass("glyphicon-remove");
+            $("#pwmatch").addClass("glyphicon-ok");
+            $("#pwmatch").css("color","#00A41E");
+        }else{
+            $("#pwmatch").removeClass("glyphicon-ok");
+            $("#pwmatch").addClass("glyphicon-remove");
+            $("#pwmatch").css("color","#FF0004");
+        }
+    });
+</script>
+
+
 {% endblock %}
