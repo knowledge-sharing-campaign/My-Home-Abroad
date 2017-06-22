@@ -51,7 +51,7 @@
             <div class="col-md-3 text-center">
                 <div class="user-nav">
                     <h2 style="color:#000;">Welcome {{ first_name }} </h2>
-
+                    <h4><input class="btn .btn-warning" type="button" name="" value="Edit your profile"></h4>
                 </div>
             </div>
 
@@ -68,7 +68,7 @@
                                     </tr>
                                     <tr>
                                         <td>Last Name</td>
-                                        <td><input type="text" value="{{ last_name }}" ></td>
+                                        <td><input type="text" value="{{ last_name }}" disabled></td>
                                     </tr>
                                     <tr>
                                         <td>E-mail</td>
@@ -84,15 +84,15 @@
                                     </tr>
                                     <tr>
                                         <td>Phone</td>
-                                        <td><input type="text" value="{{ phone }}"></td>
+                                        <td><input type="text" value="{{ phone }}" disabled></td>
                                     </tr>
                                     <tr>
                                         <td>Current City</td>
-                                        <td><input type="text" value="{{ current_city }}"></td>
+                                        <td><input type="text" value="{{ current_city }}" disabled></td>
                                     </tr>
                                     <tr>
                                         <td>Address</td>
-                                        <td><input type="text" value="{{ address }}"></td>
+                                        <td><input type="text" value="{{ address }}" disabled></td>
                                     </tr>
                                     <tr>
                                         <td>Nationality</td>
@@ -100,7 +100,6 @@
                                     </tr>
                                     </tbody>
                                 </table>
-                                <input class="btn .btn-warning" type="button" name="" value="Save Changes">
                             </div>
                         </form>
                     </div>

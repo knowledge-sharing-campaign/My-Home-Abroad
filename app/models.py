@@ -19,7 +19,7 @@ class Volunteer(models.Model):
 	first_name = models.CharField(max_length=25)
 	last_name = models.CharField(max_length=25)
 	email = models.CharField(max_length=25)
-	birth_date = models.IntegerField()
+	birth_date = models.DateField()
 	gender = models.CharField(max_length=25)
 	phone = models.IntegerField()
 	nationality = models.CharField(max_length=40)
