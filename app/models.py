@@ -6,14 +6,17 @@ from django.db import models
 from django.contrib.auth.models import User
 
 
-class User(models.Model):
-	firstname = models.CharField(max_length=15)
-	lastname = models.CharField(max_length=15)
-	email = models.CharField(max_length=25)
-	nationality = models.CharField(max_length=40)
-	phone = models.IntegerField()
+class Register(models.Model):
+	username = models.CharField(max_length=20)
+	first_name = models.CharField(max_length=25)
+	last_name = models.CharField(max_length=25)
+	email = models.EmailField(max_length=25)
+	birth_date = models.DateField()
 	gender = models.CharField(max_length=7)
-	age = models.IntegerField()
+	phone = models.IntegerField()
+	nationality = models.CharField(max_length=40)
+	password = models.CharField(max_length=40)
+	conform_password = models.CharField(max_length=40)
 
 class Volunteer(models.Model):
 	username = models.CharField(max_length=50, default = "")

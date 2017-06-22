@@ -5,7 +5,7 @@ from django.shortcuts import render, redirect, HttpResponseRedirect
 
 from django.http import HttpResponse
 
-from app.forms import RegistrationForm
+from app.forms import RegisterForm
 
 from app.forms import VolunteerForm
 from .models import Volunteer
@@ -51,16 +51,22 @@ def traveller_reg(request):
 	return render(request, 'traveller_reg.html', context)
 
 def register(request):
-	if request.method == 'POST':
-		form = RegistrationForm(request.POST)
-		if form.is_valid():	
-			form.save()
-			return redirect('/profile')
-	else:
-		form = RegistrationForm()
+    user_list = User.objects.all()
+    if request.method == 'POST':
+        form = RegisterForm(request.POST)
+        if form.is_valid():
+            user_obj = form.save()
+            user_obj.save()
 
-		args = {'form': form}
-		return render(request, 'register.html', args)
+            return HttpResponseRedirect('/profile')
+        else:
+            return HttpResponseRedirect("/Failed")
+    else:
+        form = RegisterForm()
+        return render(request, 'register.html', {
+        'form': form, 'user_list': user_list
+        })
+
 
 def volunteer(request):
     user_list = Volunteer.objects.all()
