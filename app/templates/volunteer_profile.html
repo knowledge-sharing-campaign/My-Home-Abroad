@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Volunteer Profile</title>
+    <title>{% block title %}{% endblock%}</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="{% static "css/bootstrap.min.css" %}">
@@ -14,32 +14,11 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
-    <style>
-        #design {
-            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-            border-collapse: collapse;
-            width: auto;
-        }
 
-        #design td, #design th {
-            border: 1px solid #ddd;
-            padding: 8px;
-        }
-
-        #design tr:hover {background-color: #ddd;}
-
-        #design th {
-            padding-top: 12px;
-            padding-bottom: 12px;
-            text-align: left;
-            background-color: #4CAF50;
-            color: white;
-        }
-    </style>
 </head>
+
 
 <header>
     <nav class="navbar fix " data-spy="affix" data-offset-top="197">
@@ -50,7 +29,6 @@
                     <span style="background:red;"class="icon-bar"></span>
                     <span style="background:red;"class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" <a href="{%url 'app:home'%}"><img class="logo" src="{% static "img/logo.png" %}" alt=""></a>
 
             </div>
             <div>
@@ -66,57 +44,86 @@
     </nav>
 
 </header>
+<body>
+<section id="user-profile">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3 text-center">
+                <div class="user-nav">
+                    <h2 style="color:#000;">Welcome {{ first_name }} </h2>
 
-<body data-spy="scroll" data-target=".navbar" data-offset="50" >
-<section class="min-height">
-        <div align="right"><h1><font color="#ff7f50">Welcome {{ first_name }}</font></h1></div>
-    <center>
-        <table id="design">
-            <tr>
-                <th>First Name</th>
-                <td>{{ first_name }}</td>
-            </tr>
-            <tr>
-                <th>Last Name</th>
-                <td>{{ last_name }}</td>
-            </tr>
-            <tr>
-                <th>Email</th>
-                <td>{{ email }}</td>
-            </tr>
-            <tr>
-                <th>Age</th>
-                <td>{{ birth_date }}</td>
-            </tr>
-            <tr>
-                <th>Gender</th>
-                <td>{{ gender }}</td>
-            </tr>
-            <tr>
-                <th>Phone</th>
-                <td>{{ phone }}</td>
-            </tr>
-            <tr>
-                <th>Nationality</th>
-                <td>{{ nationality }}</td>
-            </tr>
-            <tr>
-                <th>Current City</th>
-                <td>{{ current_city }}</td>
-            </tr>
-            <tr>
-                <th>Address</th>
-                <td>{{ address }}</td>
-            </tr>
-        </table>
-        <div >
-        <a href="#"><input type="submit" value="Edit"></a>
-            <a href="#"> <input type="submit" value="Delete"></a>
+                </div>
+            </div>
+
+            <div class="col-md-9">
+                <div class="user-content">
+                    <div id="uinfo" class="tabcontent">
+                        <form action="" method="post">
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <tbody>
+                                    <tr>
+                                        <td>First Name</td>
+                                        <td><input type="text" name="" value="{{ first_name }}" disabled></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Last Name</td>
+                                        <td><input type="text" value="{{ last_name }}" ></td>
+                                    </tr>
+                                    <tr>
+                                        <td>E-mail</td>
+                                        <td><input type="text" value="{{ email }}" disabled></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Date Of Birth</td>
+                                        <td><input type="text" value="{{ birth_date }}" disabled></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Gender</td>
+                                        <td><input type="text"value="{{ gender }}" disabled></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Phone</td>
+                                        <td><input type="text" value="{{ phone }}"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Current City</td>
+                                        <td><input type="text" value="{{ current_city }}"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Address</td>
+                                        <td><input type="text" value="{{ address }}"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Nationality</td>
+                                        <td><input type="text" value="{{ nationality }}" disabled></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                                <input class="btn .btn-warning" type="button" name="" value="Save Changes">
+                            </div>
+                        </form>
+                    </div>
+
+                    <div id="upcomingbokking" class="tabcontent">
+                        <form action="" method="post">
+
+                        </form>
+                    </div>
+
+                    <div id="lastbooking" class="tabcontent">
+                        <form action="" method="post">
+
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+
         </div>
-    </center>
+    </div>
 </section>
 </body>
-
 <footer id="bottom">
     <div class="container margin-btm">
         <div class="row">
@@ -155,6 +162,23 @@
     $("#Top").click(function(){
         scroll(0,0);
     });
+    function userinfo(evt, upcomingbokking) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(upcomingbokking).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+    document.getElementById("defaultOpen").click();
 </script>
 </html>
+
+
+
 
