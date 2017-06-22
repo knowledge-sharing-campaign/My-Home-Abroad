@@ -14,9 +14,15 @@
             <form method="post" action="" class="form-horizontal box">
                 {% csrf_token%}
                 <fieldset>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label" for="fn">User name</label>
+                        <div class="col-md-3">
+                            <input id="fn" name="username" type="text" placeholder="user name" minlength="2" class="form-control input-lg" required="" autofocus="">
+                        </div>
+                    </div>
                     <!-- Name-->
                     <div class="form-group">
-                        <label class="col-md-3 control-label" for="fn">First name</label>
+                        <label class="col-md-3 control-label" for="fn">Name</label>
                         <div class="col-md-3">
                             <input id="fn" name="first_name" type="text" placeholder="First Name" minlength="2" class="form-control input-lg" required="" autofocus="">
                         </div>

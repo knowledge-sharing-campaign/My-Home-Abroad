@@ -16,8 +16,9 @@ class User(models.Model):
 	age = models.IntegerField()
 
 class Volunteer(models.Model):
-	first_name = models.CharField(max_length=25)
-	last_name = models.CharField(max_length=25)
+	username = models.CharField(max_length=50, default = "")
+	first_name = models.CharField(max_length=50)
+	last_name = models.CharField(max_length=50)
 	email = models.CharField(max_length=25)
 	birth_date = models.DateField()
 	gender = models.CharField(max_length=25)

@@ -74,7 +74,7 @@ def volunteer(request):
 															  "email":request.POST.get('email'), "birth_date":request.POST.get('birth_date'),
 															  "gender":request.POST.get('gender'),"phone":request.POST.get('phone'),"nationality":request.POST.get('nationality'),
 															  "current_city":request.POST.get('current_city'),"address":request.POST.get('address'),
-															  }
+															  "username": request.POST.get('username')}
 						  )
         else:
         	return HttpResponseRedirect("/volunteer")
