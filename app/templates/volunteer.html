@@ -57,9 +57,9 @@
                         </div>
                         <!-- Age-->
                         <div class="form-group">
-                            <label class="col-md-1 control-label" for="age">Age</label>
+                            <label class="col-md-1 control-label" for="birth_date">Date of birth</label>
                             <div class="col-md-3">
-                                <input id="age" type="date" name="birth_date" class="form-control input-lg" min="16" max="90" value="16" required="">
+                                <input id="" type="date" name="birth_date" class="form-control input-lg" required="">
                             </div>
                         </div>
                     </div>
@@ -120,6 +120,9 @@
                             <span id="pwmatch" class="glyphicon glyphicon-remove" style="color:#FF0004;"></span> Passwords Match
                         </div>
                     </div>
+                    <div class="checkbox">
+			              <label class="col-sm-6 col-sm-offset-3"><input type="checkbox" value="" requiered> <P>I agree to the <a href="{%url 'app:policies'%}" style="color:#f28500;"> Terms and Conditions and Policy</a></p></label>
+			            </div>
                     <!-- Button -->
                     <div class="form-group">
                         <label class="col-md-3 control-label" for="submit"></label>

@@ -69,6 +69,38 @@ li{
   color: #f28500;
   transition: 0.3s ease-out all;
 }
+.a-color a:hover{
+  color: #f28500;
+  transition: .2s ease-out all;
+  -webkit-transform:  scale(1.07);/* Chrome, Safari, Opera */
+  transform: scale(1.07);
+}
+ /*Drop Down List */
+.dropdown {
+ float: left;
+ z-index: 1;
+}
+.list-group a{
+    z-index: 1;
+	width:145px;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  min-width: 170px;
+  z-index:
+  margin-left: -39px;
+ }
+.dropdown-content a {
+  float: none;
+  z-index: 1;
+  text-decoration: none;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
 .margin-top{
   margin-top: -20px;
 }
@@ -370,4 +402,12 @@ div.tab button.active {
 }
 .min-height{
     min-height: 500px;
+}
+#policies p{
+    font-family: serif;
+    font-size: 18px;
+}
+#about{
+    font-size: 18px;
+    font-family: serif;
 }
