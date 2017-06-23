@@ -18,6 +18,9 @@ class Register(models.Model):
 	password = models.CharField(max_length=40)
 	conform_password = models.CharField(max_length=40)
 
+	def __str__(self):
+		return self.username
+
 class Volunteer(models.Model):
 	username = models.CharField(max_length=50, default = "")
 	first_name = models.CharField(max_length=50)
@@ -31,6 +34,9 @@ class Volunteer(models.Model):
 	address = models.CharField(max_length=50)
 	password = models.CharField(max_length=40)
 	conform_password = models.CharField(max_length=40)
+
+	def __str__(self):
+		return self.username
 
 
 class BookNow(models.Model):
@@ -47,3 +53,6 @@ class BookNow(models.Model):
 	number_of_Children_travellers = models.IntegerField()
 	arrival_date = models.DateField()
 	purpose = models.CharField(max_length=20)
+
+	def __str__(self):
+		return self.first_name
