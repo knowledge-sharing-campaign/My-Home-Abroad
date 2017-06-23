@@ -18,5 +18,4 @@ urlpatterns = [
     url(r'^bookNow/$', views.bookNow, name='bookNow'),
     url(r'^register/$', views.register, name='register'),
     url(r'^traveller_reg/$', views.traveller_reg, name='traveller_reg'),
-     url(r'^about/$', views.about, name='about'),
 ]

@@ -40,7 +40,7 @@ def schedule(request):
 	return render(request, 'schedule.html', context)
 def profile(request):
 	context = {}
-	return render(request, 'volunteer_profile.html', context)
+	return render(request, 'profile.html', context)
 
 def bookNow(request):
 	context = {}
@@ -96,9 +96,9 @@ def bookNow(request):
     if request.method == 'POST':
         form = BookNowForm(request.POST)
         if form.is_valid():
-            user_obj = form.save()
+            user_obj = form.save() 
             user_obj.save()
-
+            
             return HttpResponseRedirect('/schedule')
         else:
         	return HttpResponse("Failed")
@@ -107,7 +107,3 @@ def bookNow(request):
     	return render(request, 'bookNow.html', {
         'form': form, 'user_list': user_list
         })
-
-def about(request):
-	context = {}
-	return render(request, 'about_us.html', context)

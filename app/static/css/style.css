@@ -80,12 +80,10 @@
   border: 0;
   font-weight: bold;
   margin-bottom: 20px;
-  width: 300px;
 }
 #bg-image .btn2{
   margin-left: 30px;
   margin-bottom: 40px;
-  width: 300px;
 }
 #bg-image .btn1:hover{
   opacity: .9;
@@ -94,3 +92,4 @@
   background: #ff6f00;
   border: 2px solid #ff6f00;
 }
+
