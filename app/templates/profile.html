@@ -1,5 +1,98 @@
 {% extends 'base.html' %}
+
+{% load staticfiles %}
+
 {% block content %}
 
-<h1>your profile page</h1>
+<section id="user-profile">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3 text-center">
+                <div class="user-nav">
+                    <h2 style="color:#000;">Welcome {{ first_name }} </h2>
+                    <h4><input class="btn .btn-warning" type="button" name="" value="Edit your profile"></h4>
+                </div>
+            </div>
+
+            <div class="col-md-9">
+                <div class="user-content">
+                    <div id="uinfo" class="tabcontent">
+                        <form action="" method="post">
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <tbody>
+                                    <tr>
+                                        <td>User Name</td>
+                                        <td><input type="text" name="" value="{{ username }}" disabled></td>
+                                    </tr>
+                                    <tr>
+                                        <td>First Name</td>
+                                        <td><input type="text" name="" value="{{ first_name }}" disabled></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Last Name</td>
+                                        <td><input type="text" value="{{ last_name }}" disabled></td>
+                                    </tr>
+                                    <tr>
+                                        <td>E-mail</td>
+                                        <td><input type="text" value="{{ email }}" disabled></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Date Of Birth</td>
+                                        <td><input type="text" value="{{ birth_date }}" disabled></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Gender</td>
+                                        <td><input type="text"value="{{ gender }}" disabled></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Phone</td>
+                                        <td><input type="text" value="{{ phone }}" disabled></td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td>Nationality</td>
+                                        <td><input type="text" value="{{ nationality }}" disabled></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div id="upcomingbokking" class="tabcontent">
+                        <form action="" method="post">
+
+                        </form>
+                    </div>
+
+                    <div id="lastbooking" class="tabcontent">
+                        <form action="" method="post">
+
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<script type="text/javascript">
+    function userinfo(evt, upcomingbokking) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(upcomingbokking).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+    document.getElementById("defaultOpen").click();
+</script>
 {% endblock %}

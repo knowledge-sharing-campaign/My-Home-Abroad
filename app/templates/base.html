@@ -38,7 +38,18 @@
           <li><a href="{%url 'app:home'%}">Home</a></li>
           <li><a href="{%url 'app:schedule'%}">My Scheduled Visits</a></li>
           <li><a href="{%url 'app:volunteer'%}">volunteer</a></li>
-          <li><a href="{%url 'app:refer'%}">Refer a friend </a></li>
+          <li class="dropdown"><a href="#">Refer A Friend</a>
+             <ul class="dropdown-content">
+               <div class="list-group">
+                 <a class="list-group-item" href="https://www.facebook.com/"><i class="fa fa-facebook" aria-hidden="true"></i>&nbsp; Facebook</a>
+                 <a class="list-group-item" href="https://web.whatsapp.com/"><i class="fa fa-whatsapp" aria-hidden="true"></i>&nbsp; Whatsapp</a>
+                 <a class="list-group-item" href="https://www.instagram.com/?hl=en"><i class="fa fa-instagram" aria-hidden="true"></i>&nbsp; Instgram</a>
+                 <a class="list-group-item" href="https://twitter.com/"><i class="fa fa-twitter"  aria-hidden="true"></i>&nbsp; Twitter</a>
+                 <a class="list-group-item" href="https://plus.google.com/?hl=fr"><i class="fa fa-google-plus"  aria-hidden="true"></i>&nbsp;Google +</a>
+                 <a class="list-group-item" href="https://in.linkedin.com/"><i class="fa fa-linkedin" aria-hidden="true"></i>&nbsp; Linkedin</a>
+               </div>
+             </ul>
+         </li>
           <li><a href="{%url 'app:policies'%}">Policies</a></li>
           <li><a href="{%url 'app:login'%}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
         </ul>
@@ -49,20 +60,20 @@
 
 </header>
 
+
 <body data-spy="scroll" data-target=".navbar" data-offset="50">
 <section class="min-height">
     {% block content %}
 
     {% endblock %}
 </section>
-  </body>
 
   <footer id="bottom">
   <div class="container margin-btm">
     <div class="row">
       <div class="col-md-4 ">
         <h1>My Home Abroad</h1>
-        <h4 class="footer-text-color">About Us</h4>
+        <h4 class="footer-text-color"><a href="{%url 'app:about'%}">About Us</a></h4>
         <p class="footer-text-color"></p>
       </div>
 
@@ -96,4 +107,5 @@ $("#Top").click(function(){
  scroll(0,0);
 });
 </script>
+</body>
 </html>

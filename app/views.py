@@ -40,7 +40,7 @@ def schedule(request):
 	return render(request, 'schedule.html', context)
 def profile(request):
 	context = {}
-	return render(request, 'profile.html', context)
+	return render(request, 'volunteer_profile.html', context)
 
 def bookNow(request):
 	context = {}
@@ -58,12 +58,16 @@ def register(request):
             user_obj = form.save()
             user_obj.save()
 
-            return HttpResponseRedirect('/profile')
+            return render(request, 'profile.html', {"first_name":request.POST.get('first_name'), "last_name":request.POST.get('last_name'),
+															  "email":request.POST.get('email'), "birth_date":request.POST.get('birth_date'),
+															  "gender":request.POST.get('gender'),"phone":request.POST.get('phone'),"nationality":request.POST.get('nationality'),
+															  "username": request.POST.get('username')}
+						  )
         else:
-            return HttpResponseRedirect("/Failed")
+        	return HttpResponseRedirect("/register")
     else:
-        form = RegisterForm()
-        return render(request, 'register.html', {
+        form = VolunteerForm()
+    	return render(request, 'register.html', {
         'form': form, 'user_list': user_list
         })
 
@@ -79,7 +83,7 @@ def volunteer(request):
             return render(request, 'volunteer_profile.html', {"first_name":request.POST.get('first_name'), "last_name":request.POST.get('last_name'),
 															  "email":request.POST.get('email'), "birth_date":request.POST.get('birth_date'),
 															  "gender":request.POST.get('gender'),"phone":request.POST.get('phone'),"nationality":request.POST.get('nationality'),
-															  "current_city":request.POST.get('current_city'),"address":request.POST.get('address'),
+															  "current_city":request.POST.get('current_city'),"current_country":request.POST.get('current_country'),"address":request.POST.get('address'),
 															  "username": request.POST.get('username')}
 						  )
         else:
@@ -96,9 +100,9 @@ def bookNow(request):
     if request.method == 'POST':
         form = BookNowForm(request.POST)
         if form.is_valid():
-            user_obj = form.save() 
+            user_obj = form.save()
             user_obj.save()
-            
+
             return HttpResponseRedirect('/schedule')
         else:
         	return HttpResponse("Failed")
@@ -107,3 +111,14 @@ def bookNow(request):
     	return render(request, 'bookNow.html', {
         'form': form, 'user_list': user_list
         })
+
+def about(request):
+	context = {}
+	return render(request, 'about_us.html', context)
+
+def forgetting_passwd(request):
+    context = {}
+    return render(request, 'forgetting_passwd.html', context)
+def my_schedul(request):
+    context = {}
+    return render(request, 'my_schedul.html', context)

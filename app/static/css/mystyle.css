@@ -69,6 +69,38 @@ li{
   color: #f28500;
   transition: 0.3s ease-out all;
 }
+.a-color a:hover{
+  color: #f28500;
+  transition: .2s ease-out all;
+  -webkit-transform:  scale(1.07);/* Chrome, Safari, Opera */
+  transform: scale(1.07);
+}
+ /*Drop Down List */
+.dropdown {
+ float: left;
+ z-index: 1;
+}
+.list-group a{
+    z-index: 1;
+	width:145px;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  min-width: 170px;
+  z-index:
+  margin-left: -39px;
+ }
+.dropdown-content a {
+  float: none;
+  z-index: 1;
+  text-decoration: none;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
 .margin-top{
   margin-top: -20px;
 }
@@ -370,4 +402,102 @@ div.tab button.active {
 }
 .min-height{
     min-height: 500px;
+}
+#policies p{
+    font-family: serif;
+    font-size: 18px;
+}
+#about{
+    font-size: 18px;
+    font-family: serif;
+}
+/* ***********User Profile *********/
+#user-profile{
+  margin: 0%;
+  background: #f4f4f4;
+}
+#user-profile .user-nav{
+  min-height: 600px;
+}
+#user-profile .img-circle{
+  margin-bottom: 4%;
+}
+#user-profile .user-name h5{
+  text-align: center;
+  color: #000;
+  font-family: serif;
+  font-weight: bold;
+  font-size: 23px;
+}
+#user-profile hr{
+  border: 2px solid #f28500;
+}
+#user-profile .user-content{
+  /* padding-left: 2%; */
+}
+#user-profile .profile-head{;
+  min-height: 30px;
+  width: 99%;
+  margin:1%;
+  text-align: center;
+  line-height: 5rem;
+  background: #fff;
+}
+div.tab {
+  float: left;
+  width: 100%;
+  min-height: 300px;
+  margin-bottom: 20px;
+}
+div.tab button {
+  display: block;
+  background-color: #fff;
+  color: black;
+  padding: 22px 16px;
+  width: 100%;
+  border: none;
+  outline: none;
+  text-align: left;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 17px;
+}
+div.tab button:hover {
+  background-color: #ddd;
+  border-left: 4px solid #f28500;
+  padding-right: 20px;
+}
+div.tab button.active {
+  background-color: #ccc;
+
+}
+.tabcontent {
+  margin: 1%;
+  padding: 5%;
+  width: 99%;
+  min-height: 600px;
+  background: #fff;
+}
+#user-profile .row-margin td input, option{
+  width: 80%;
+}
+.td-design{
+  border: 1px solid #f28500;
+}
+#user-profile .user-bottom{
+  margin-right: 2%;
+  margin-bottom: 2%;
+}
+#user-profile .user-bottom input{
+  margin-left: 10px;
+  background: #f28500;
+  color: #fff;
+  opacity: .9;
+
+}
+#user-profile .user-bottom input:hover{
+  opacity: 1;
+  -webkit-box-shadow: 0px 0px 46px 6px rgba(235,159,82,1);
+-moz-box-shadow: 0px 0px 46px 6px rgba(235,159,82,1);
+box-shadow: 0px 0px 46px 6px rgba(235,159,82,1);
 }

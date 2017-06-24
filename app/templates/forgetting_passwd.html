@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block content %}
+
+<title> {% block title %}{% endblock%}</title>
+
+<link rel="stylesheet" href="{% static "css/login.css" %}">
+
+<div id="login"
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6 col-md-4 col-md-offset-4 Flo well">
+            <h1 class="text-center login-title "> Forgot password</h1>
+            <div class="account-wall">
+
+            <form class="form-signin" method="post">
+					{% csrf_token %}
+					{{form.as_p}}
+
+
+                   enter email <input type="text box" ><br>
+                   <br>
+                 <p>After submitting, login using link sent to your registered email </p>
+                 <div  class="form-group">
+                        <label class="col-md-3 control-label" for="submit"></label>
+                        <div class="col-md-6">
+                            <a href="{%url 'app:login'%}" button id="submit" name="submit" class="user-btn btn">Submit</button></a>
+                        </div>
+                 </div>
+        </div>
+    </div>
+</div>
+</div>
+{% endblock %}

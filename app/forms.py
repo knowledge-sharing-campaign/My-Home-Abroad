@@ -40,6 +40,7 @@ class VolunteerForm(forms.ModelForm):
 			'phone',
             'nationality',
 			'current_city',
+			'current_country',
 			'address',
 			'password',
 			'conform_password',
@@ -53,14 +54,14 @@ class VolunteerForm(forms.ModelForm):
 		return user
 
 class BookNowForm(forms.ModelForm):
-	
+
 	class Meta:
 		model = BookNow
 		fields = (
-			'first_name',			
+			'first_name',
 			'last_name',
 			'gender',
-			'age', 
+			'birth_date',
 			'email',
 			'nationality',
 			'travelling_From',
@@ -74,7 +75,7 @@ class BookNowForm(forms.ModelForm):
 
 	def save(self, commit=True):
 		user = super(BookNowForm, self).save()
-		
+
 		if commit:
 		 user.save()
 
