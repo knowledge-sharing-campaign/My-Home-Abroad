@@ -2,6 +2,7 @@
 from __future__ import unicode_literals
 
 from django.shortcuts import render, redirect, HttpResponseRedirect
+from django.core.mail import send_mail
 
 from django.http import HttpResponse
 
@@ -100,6 +101,13 @@ def bookNow(request):
     if request.method == 'POST':
         form = BookNowForm(request.POST)
         if form.is_valid():
+            send_mail(
+                "Booking Confirmation",
+                "You successfully booked a slot",
+                "ellelyf@gmail.com",
+                ['edy.ellely@gmail.com'],
+                fail_silently=False
+            )
             user_obj = form.save()
             user_obj.save()
 
