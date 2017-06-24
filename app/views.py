@@ -104,8 +104,8 @@ def bookNow(request):
             send_mail(
                 "Booking Confirmation",
                 "You successfully booked a slot",
-                "ellelyf@gmail.com",
-                ['edy.ellely@gmail.com'],
+                "bring.learn.share@gmail.com",
+                ['epifania.minjaa@gmail.com'],
                 fail_silently=False
             )
             user_obj = form.save()
