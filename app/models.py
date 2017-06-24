@@ -517,6 +517,9 @@ class Register(models.Model):
 	password = models.CharField(max_length=40)
 	conform_password = models.CharField(max_length=40)
 
+	def __str__(self):
+		return self.username
+
 class Volunteer(models.Model):
 	created_at = models.DateTimeField(auto_now_add=True)
 	modified_at = models.DateTimeField(auto_now=True)
@@ -536,6 +539,9 @@ class Volunteer(models.Model):
 	password = models.CharField(max_length=40)
 	conform_password = models.CharField(max_length=40)
 
+	def __str__(self):
+		return self.username
+
 
 class BookNow(models.Model):
 	created_at = models.DateTimeField(auto_now_add=True)
@@ -546,13 +552,12 @@ class BookNow(models.Model):
 	birth_date = models.DateField()
 	email = models.EmailField(max_length=25)
 	nationality = models.CharField(max_length=100)
-	def __str__(self):
-		return self.first_name
 	travelling_From = models.CharField(max_length=100)
 	travelling_To = models.CharField(max_length=100)
 	arrival_city = models.CharField(max_length=50)
 	number_of_Adult_travellers = models.IntegerField()
 	number_of_Children_travellers = models.IntegerField()
 	arrival_date = models.DateField()
-
 	purpose = models.CharField(max_length=10)
+	def __str__(self):
+		return self.first_name
